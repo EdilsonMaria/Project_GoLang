@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  http-server-projeto-korp:
+    build: .
+    restart: always
+    networks:
+      - net-project-korp
+    
+  nginx:
+    image: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d/http-server-projeto-korp.conf:/etc/nginx/nginx.conf
+    networks:
+      - net-project-korp
+    
+
+networks:
+  net-project-korp:
+    driver: bridge
