@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   http-server-projeto-korp:
+    container_name: http-server
     build: .
     restart: always
     networks:
@@ -9,6 +10,7 @@ services:
     
   nginx:
     image: nginx
+    container_name: nginx
     restart: always
     ports:
       - "80:80"
