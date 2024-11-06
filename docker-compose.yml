@@ -18,7 +18,9 @@ services:
       - ./nginx/conf.d/http-server-projeto-korp.conf:/etc/nginx/nginx.conf
     networks:
       - net-project-korp
-    
+
+volumes:
+  nginx:   
 
 networks:
   net-project-korp:
